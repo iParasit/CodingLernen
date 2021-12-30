@@ -3,6 +3,8 @@ package tv.parasit.mccourse;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import tv.parasit.mccourse.block.ModBlocks;
+import tv.parasit.mccourse.item.ModItems;
 
 public class MCCourseMod implements ModInitializer {
 
@@ -12,7 +14,9 @@ public class MCCourseMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		ModItems.registerModItems();
+		ModBlocks.registerBlocks();
 
-		LOGGER.info("Hello Fabric world!");
+
 	}
 }
