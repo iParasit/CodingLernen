@@ -10,6 +10,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import tv.parasit.mccourse.MCCourseMod;
+import tv.parasit.mccourse.block.custom.SpeedyBlock.SpeedyBlock;
 import tv.parasit.mccourse.item.ModItemGroups;
 import tv.parasit.mccourse.item.ModItems;
 
@@ -26,6 +27,9 @@ public class ModBlocks {
 
     public static final Block RAW_ORICHALCUM_BLOCK = registerBlock("raw_orichalcum_block",
             new Block(FabricBlockSettings.of(Material.STONE).strength(5f).requiresTool()), ModItemGroups.COURSE);
+
+    public static final Block SPEEDY_BLOCK = registerBlock("speedy_block",
+            new SpeedyBlock(FabricBlockSettings.of(Material.STONE).strength(5f).requiresTool()), ModItemGroups.COURSE);
 
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
