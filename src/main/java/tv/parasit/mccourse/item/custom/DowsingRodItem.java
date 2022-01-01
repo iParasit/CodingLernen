@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 
@@ -34,11 +35,11 @@ public class DowsingRodItem extends Item {
             }
 
             if(!foundBlock) {
-                player.sendMessage(new LiteralText("item.course.dowsing_rod.no_valuables"), false);
+                player.sendMessage(new TranslatableText("item.mccourse.dowsing_rod.no_valuables"), false);
             }
         }
 
-        context.getStack().damage(1, context.getPlayer(), (playerEntity -> playerEntity.sendToolBreakStatus()));
+        context.getStack().damage(1, context.getPlayer(), (player) -> player.sendToolBreakStatus(player.getActiveHand()));
 
         return super.useOnBlock(context);
     }
